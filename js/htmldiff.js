@@ -70,7 +70,7 @@
      */
     var atomicTagsRegExp;
     // Added head and style (for style tags inside the body)
-    var defaultAtomicTagsRegExp = new RegExp('^<(iframe|object|math|svg|script|video|head|style)');
+    var defaultAtomicTagsRegExp = new RegExp('^<(iframe|object|math|svg|script|video|head|style|a)');
     
     /**
      * Checks if the current word is the beginning of an atomic tag. An atomic tag is one whose
@@ -286,6 +286,12 @@
         var img = /^<img.*src=['"]([^"']*)['"].*>$/.exec(token);
         if (img) {
             return '<img src="' + img[1] + '">';
+        }
+        
+        // If the token is an a element, grab it's data attribute to include in the key.
+        var a = /^<a.*href=['"]([^"']*)['"]/.exec(token);
+        if (a) {
+            return '<a href="' + a[1] + '"></a>';
         }
 
         // If the token is an object element, grab it's data attribute to include in the key.
