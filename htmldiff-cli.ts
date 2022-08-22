@@ -72,7 +72,7 @@ function readFileContent(fileName: string): string {
         }
         return result;
     } catch (error) {
-        console.error(`Couldn't read file "${fileName}"\n${error.stack}`);
+        console.error(`Couldn't read file "${fileName}"\n${error}`);
         return "";
     }
 }
