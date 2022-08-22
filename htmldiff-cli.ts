@@ -58,13 +58,11 @@ Options:
 }
 
 /**
- * Read content of a file and return content as a string. The encoding of the
- * file is considered to be in UTF-8 format by default.
- *
- * @param {string} fileName - The name of the file to be read.
- *
- * @returns {string} - The content of 'fileName' as a string. An empty string is
- *     considered to be an error which will be logged.
+ * Read content of a file and return content as a string. The encoding of the file is considered to
+ * be in UTF-8 format by default.
+ * @param fileName The name of the file to be read.
+ * @returns The content of 'fileName' as a string. An empty string is considered to be an error
+ * which will be logged.
  */
 function readFileContent(fileName: string): string {
     try {
@@ -80,14 +78,12 @@ function readFileContent(fileName: string): string {
 }
 
 /**
- * Set the value of one the variables for the `diff` function based on a given
- * switch name. The function fails (return false) if the value of the variable
- * is already set (duplicate switch) or the switch name is unknown.
- *
- * @param name {string} - The name of the switch (one of `-c`, `-p` or `-t`)
- * @param value {string} - The value of the switch given on the command line.
- *
- * @returns {boolean} - `true` if the switch could be resolved, otherwise `false`.
+ * Set the value of one the variables for the `diff` function based on a given switch name. The
+ * function fails (return false) if the value of the variable is already set (duplicate switch) or
+ * the switch name is unknown.
+ * @param name The name of the switch (one of `-c`, `-p` or `-t`)
+ * @param value The value of the switch given on the command line.
+ * @returns `true` if the switch could be resolved, otherwise `false`.
  */
 function resolveSwitch(name: string, value: string): boolean {
     switch (name) {
