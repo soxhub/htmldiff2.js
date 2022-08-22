@@ -60,7 +60,7 @@
     "scripts": {
         "test": "mocha -R min",
         "testsample": "node htmldiff-cli.js sample/before.html sample/after.html - -c myDiffClass -p myPrefix",
-        "lint": "tslint --exclude ./htmldiff-cli.d.ts --config ./tslint.json ./*.ts ./js/*.ts",
+        "lint": "eslint -c eslintrc.json --parser-options=project:./tsconfig.json --ext .ts ./",
         "premake": "npm run lint",
         "make": "tsc -p tsconfig.json && node -e \"require('fs').unlinkSync('./htmldiff-cli.d.ts')\""
     }
