@@ -142,6 +142,6 @@ This module wouldn't have been possible without code from the following projects
 
 ## License
 
-MIT © [idesis GmbH](http://www.idesis.de), Rellinghauser Straße 334F, D-45136 Essen
+MIT © [idesis GmbH](https://www.idesis.de), Max-Keith-Straße 66 (E 11), D-45136 Essen
 
 See the `LICENSE` file for details.
