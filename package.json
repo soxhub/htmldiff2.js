@@ -2,8 +2,8 @@
     "name": "node-htmldiff",
     "description": "Diff and markup HTML with <ins> and <del> tags",
     "companyname": "idesis GmbH",
-    "version": "0.9.3",
     "copyright": "©2022, idesis GmbH; ©2012 The Network Inc. and contributors",
+    "version": "0.9.4",
     "identifier": "de.idesis.node-htmldiff",
     "keywords": [
         "diff",

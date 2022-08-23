@@ -19,8 +19,8 @@ let atomicTags: string | null = null;
  * Output usage info and version on the console.
  */
 function printUsage(): void {
-    const usage: string =
-`${cli} v0.9.3
+    const usage =
+`${cli} v0.9.4
 
 Usage: ${cli} beforeFile afterFile diffedFile [Options]
 
