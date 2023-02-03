@@ -70,7 +70,7 @@
      */
     var atomicTagsRegExp;
     // Added head and style (for style tags inside the body)
-    var defaultAtomicTagsRegExp = new RegExp('^<(iframe|object|math|svg|script|video|head|style|a)');
+    var defaultAtomicTagsRegExp = new RegExp('^<(iframe|object|math|svg|script|video|head|style|a)\b');
     
     /**
      * Checks if the current word is the beginning of an atomic tag. An atomic tag is one whose
@@ -960,7 +960,7 @@
 
         // Enable user provided atomic tag list.
         atomicTags ? 
-            (atomicTagsRegExp = new RegExp('^<(' + atomicTags.replace(/\s*/g, '').replace(/,/g, '|') + ')'))
+            (atomicTagsRegExp = new RegExp('^<(' + atomicTags.replace(/\s*/g, '').replace(/,/g, '|') + ')\b'))
             : (atomicTagsRegExp = defaultAtomicTagsRegExp);
 
         before = htmlToTokens(before);
