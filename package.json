@@ -1,10 +1,7 @@
 {
   "name": "@soxhub/htmldiff2",
   "description": "Diff and markup HTML with <ins> and <del> tags",
-  "companyname": "idesis GmbH",
-  "copyright": "©2022, idesis GmbH; ©2012 The Network Inc. and contributors",
   "version": "1.0.0",
-  "identifier": "de.idesis.node-htmldiff",
   "keywords": [
     "diff",
     "html",
@@ -13,19 +10,20 @@
     "del"
   ],
   "homepage": "https://github.com/idesis-gmbh/htmldiff.js",
-  "author": "Michael Nitze <michael.nitze@idesis.de> (https://www.idesis.de)",
+  "author": "Michael Nitze <michael.nitze@idesis.de> (https://www.idesis.de); Kyle Nakano <knakano@auditboard.com>",
   "contributors": [
     "The Network Inc. (https://www.tninetwork.com, https://github.com/tnwinc/htmldiff.js)",
     "Inkling (https://www.inkling.com, https://github.com/inkling/htmldiff.js)",
-    "Ian White (ianwhitester@gmail.com, https://github.com/ian97531)"
+    "Ian White (ianwhitester@gmail.com, https://github.com/ian97531)",
+    "Kyle Nakano (knakano@auditboard.com, https://github.com/kylenakano)"
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/idesis-gmbh/htmldiff.js.git"
+    "url": "git+https://github.com/soxhub/htmldiff2.js.git"
   },
   "bugs": {
-    "url": "https://github.com/idesis-gmbh/htmldiff.js/issues",
-    "email": "produktion@idesis.de"
+    "url": "https://github.com/soxhub/htmldiff2.js/issues",
+    "email": "knakano@auditboard.com"
   },
   "private": false,
   "license": "MIT",
