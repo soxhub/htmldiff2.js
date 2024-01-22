@@ -171,6 +171,7 @@
 	 * @return {Array.<string>} The list of tokens.
 	 */
 	function htmlToTokens(html) {
+		html = html ?? '';
 		var mode = 'char';
 		var currentWord = '';
 		var currentAtomicTag = '';
