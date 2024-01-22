@@ -1,8 +1,8 @@
 #!/usr/bin/env node
 
-import { readFileSync, writeFileSync } from "fs";
-import { parse, resolve } from "path";
-import diffHTML from "./js/htmldiff";
+import { readFileSync, writeFileSync } from 'fs';
+import { parse, resolve } from 'path';
+import diffHTML from './js/htmldiff';
 
 // Argument count.
 const argc: number = process.argv.length;
@@ -19,8 +19,7 @@ let atomicTags: string | null = null;
  * Output usage info and version on the console.
  */
 function printUsage(): void {
-    const usage =
-`${cli} v0.9.4
+	const usage = `${cli} v0.9.4
 
 Usage: ${cli} beforeFile afterFile diffedFile [Options]
 
@@ -54,7 +53,7 @@ Options:
   as one token. This is useful for tags where it does not make sense to
   insert <ins> and <del> tags. If not used, this default list will be used:
   "iframe,object,math,svg,script,video,head,style".`;
-    console.log(usage);
+	console.log(usage);
 }
 
 /**
@@ -65,16 +64,16 @@ Options:
  * which will be logged.
  */
 function readFileContent(fileName: string): string {
-    try {
-        const result = readFileSync(resolve(fileName), "utf-8");
-        if (result === "") {
-            console.error(`File "${fileName}" is empty.`);
-        }
-        return result;
-    } catch (error) {
-        console.error(`Couldn't read file "${fileName}"\n${error}`);
-        return "";
-    }
+	try {
+		const result = readFileSync(resolve(fileName), 'utf-8');
+		if (result === '') {
+			console.error(`File "${fileName}" is empty.`);
+		}
+		return result;
+	} catch (error) {
+		console.error(`Couldn't read file "${fileName}"\n${error}`);
+		return '';
+	}
 }
 
 /**
@@ -86,72 +85,73 @@ function readFileContent(fileName: string): string {
  * @returns `true` if the switch could be resolved, otherwise `false`.
  */
 function resolveSwitch(name: string, value: string): boolean {
-    switch (name) {
-        case "-c":
-            if (className) { // Already assigned, double usage of switch
-                return false;
-            }
-            className = value;
-            return true;
+	switch (name) {
+		case '-c':
+			if (className) {
+				// Already assigned, double usage of switch
+				return false;
+			}
+			className = value;
+			return true;
 
-        case "-p":
-            if (dataPrefix) {
-                return false;
-            }
-            dataPrefix = value;
-            return true;
+		case '-p':
+			if (dataPrefix) {
+				return false;
+			}
+			dataPrefix = value;
+			return true;
 
-        case "-t":
-            if (atomicTags) {
-                return false;
-            }
-            atomicTags = value;
-            return true;
-    }
-    // Unknown switch
-    return false;
+		case '-t':
+			if (atomicTags) {
+				return false;
+			}
+			atomicTags = value;
+			return true;
+	}
+	// Unknown switch
+	return false;
 }
 
 // Invalid argc
 const validArgc: number[] = [5, 7, 9, 11];
 if (validArgc.indexOf(argc) === -1) {
-    printUsage();
-    process.exit(1);
+	printUsage();
+	process.exit(1);
 }
 
 // Resolve switches
 if (argc > 6) {
-    if (!resolveSwitch(process.argv[5], process.argv[6])) {
-        printUsage();
-        process.exit(1);
-    }
+	if (!resolveSwitch(process.argv[5], process.argv[6])) {
+		printUsage();
+		process.exit(1);
+	}
 }
 if (argc > 8) {
-    if (!resolveSwitch(process.argv[7], process.argv[8])) {
-        printUsage();
-        process.exit(1);
-    }
+	if (!resolveSwitch(process.argv[7], process.argv[8])) {
+		printUsage();
+		process.exit(1);
+	}
 }
 if (argc > 10) {
-    if (!resolveSwitch(process.argv[9], process.argv[10])) {
-        printUsage();
-        process.exit(1);
-    }
+	if (!resolveSwitch(process.argv[9], process.argv[10])) {
+		printUsage();
+		process.exit(1);
+	}
 }
 
 // Execute diff
 const beforeFile: string = readFileContent(process.argv[2]);
 if (!beforeFile) {
-     process.exit(1);
+	process.exit(1);
 }
 const afterFile: string = readFileContent(process.argv[3]);
 if (!afterFile) {
-    process.exit(1);
+	process.exit(1);
 }
 const diffedResult: string = diffHTML(beforeFile, afterFile, className, dataPrefix, atomicTags);
 
-if (/* output file */process.argv[4] === "-") {
-    console.log(diffedResult);
+if (/* output file */ process.argv[4] === '-') {
+	console.log(diffedResult);
 } else {
-    writeFileSync(resolve(process.argv[4]), diffedResult);
+	writeFileSync(resolve(process.argv[4]), diffedResult);
 }
