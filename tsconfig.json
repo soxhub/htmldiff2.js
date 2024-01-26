@@ -28,5 +28,4 @@
 		"experimentalDecorators": false,
 		"emitDecoratorMetadata": false,
 	},
-	"files": ["htmldiff-cli.ts"],
 }

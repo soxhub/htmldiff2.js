@@ -28,15 +28,11 @@
 	"private": false,
 	"license": "MIT",
 	"main": "js/htmldiff.js",
-	"bin": {
-		"htmldiff": "htmldiff-cli.js"
-	},
 	"files": [
 		"js/htmldiff.js",
 		"js/htmldiff.d.ts",
 		"sample/*",
-		"test/*",
-		"htmldiff-cli.js"
+		"test/*"
 	],
 	"types": "js/htmldiff.d.ts",
 	"devDependencies": {
